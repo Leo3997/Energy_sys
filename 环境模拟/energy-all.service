@@ -1,0 +1,25 @@
+[Unit]
+Description=Energy Optimization All Services
+After=network.target
+
+[Service]
+# 指定运行用户为 root (因为你的文件在 /root 目录下)
+User=root
+Group=root
+
+# 设定工作目录 (非常重要，否则找不到 dashboard.html 或 pkl 文件)
+WorkingDirectory=/root/energy
+
+# 启动命令 (运行监控脚本，该脚本会持续运行并监控所有服务)
+ExecStart=/usr/bin/bash /root/energy/monitor_energy_services.sh
+
+# 自动重启策略：如果程序崩溃，5秒后自动重启
+Restart=always
+RestartSec=5
+
+# 输出日志到系统日志
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

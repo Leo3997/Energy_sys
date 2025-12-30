@@ -1,0 +1,28 @@
+# Web Framework
+flask
+flask-cors
+flask-socketio
+eventlet
+
+# Database
+influxdb-client
+mysql-connector-python
+
+# Data Processing
+numpy
+pandas
+
+# Machine Learning
+scikit-learn
+joblib
+torch
+stable-baselines3
+gymnasium
+
+# Visualization
+matplotlib
+
+# Utilities
+python-dotenv
+requests
+openpyxl
